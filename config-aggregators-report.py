@@ -49,9 +49,8 @@ def get_config_rules():
                 'ComplianceType': 'NON_COMPLIANT'
             }
         )
-        for config_rule in config_rules_resp['AggregateComplianceByConfigRules']:
-            del config_rule['Compliance']
-            config_rule_names.append(config_rule)
+        config_rule_names += config_rules_resp['AggregateComplianceByConfigRules']
+        
         
         while 'NextToken' in config_rules_resp:
             config_rules_resp = config.describe_aggregate_compliance_by_config_rules(
@@ -61,9 +60,7 @@ def get_config_rules():
                 },
                 NextToken = config_rules_resp['NextToken']
             )
-            for config_rule in config_rules_resp['AggregateComplianceByConfigRules']:
-                del config_rule['Compliance']
-                config_rule_names.append(config_rule)
+            config_rule_names += config_rules_resp['AggregateComplianceByConfigRules']
         aggregator_name_rule['AggregatorRules'] = config_rule_names
         aggregator_name_rules.append(aggregator_name_rule)
     return aggregator_name_rules
@@ -71,17 +68,13 @@ def get_config_rules():
 def get_aggregator_names():
     response = config.describe_configuration_aggregators()
     aggregator_names = []
-    for aggregator in response['ConfigurationAggregators']:
-        aggregator_name = aggregator['ConfigurationAggregatorName']
-        aggregator_names.append(aggregator_name)
+    aggregator_names += [aggregator['ConfigurationAggregatorName'] for aggregator in response['ConfigurationAggregators']]
     
     while 'NextToken' in response:
         response = config.describe_configuration_aggregators(
             NextToken = response['NextToken']
         )
-        for aggregator in response['ConfigurationAggregators']:
-            aggregator_name = aggregator['ConfigurationAggregatorName']
-            aggregator_names.append(aggregator_name)
+        aggregator_names += [aggregator['ConfigurationAggregatorName'] for aggregator in response['ConfigurationAggregators']]
     return aggregator_names
 
 # lambda_handler(None,None)
