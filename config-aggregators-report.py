@@ -1,12 +1,20 @@
+
 import boto3
 import json
+
 config = boto3.client('config')
 ses_client = boto3.client('ses')
+
+# Lambda handler function. 
+
 def lambda_handler(event,context):
     get_resources()
 
+# Function to get resources id, resource type, account id, region from get aggregate compliance details by config rule method
+# This function get/prints the resource id, type, account id, region in json format.
+
 def get_resources():
-    aggregators = get_config_rules()
+    aggregators = get_aggregator_data()
     rules = []
     final_resp = []
     for aggregator in aggregators:
@@ -35,19 +43,20 @@ def get_resources():
                 rules.append(result)
             agg_rules_obj['AggregatorRules'] = rules
         final_resp.append(agg_rules_obj)
-        send_email(str(agg_rules_obj))
-    json.dumps(final_resp)
-    print(final_resp)
+#        send_email(str(agg_rules_obj))
+    print(json.dumps(final_resp))
 
+# Function gets aggregator data based out of get_aggregator_names function.
+# This function returns aggregator rule list. 
 
-def get_config_rules():
+def get_aggregator_data():
     aggregator_names = get_aggregator_names()
-    config_rule_names = []
-    aggregator_rule_info = []
+    config_rules = [] # Change 
+    aggregator_rule_list = []
     
     for aggregator_name in aggregator_names:
-        aggregator_name_rule = {}
-        aggregator_name_rule['AggregatorName'] = aggregator_name
+        aggregator_rule_info = {}
+        aggregator_rule_info['AggregatorName'] = aggregator_name
         next_token = ''
         while True:
             config_rules_resp = config.describe_aggregate_compliance_by_config_rules(
@@ -57,63 +66,20 @@ def get_config_rules():
                 },
                 NextToken = next_token
             )
-            config_rule_names += config_rules_resp['AggregateComplianceByConfigRules']
+            config_rules += config_rules_resp['AggregateComplianceByConfigRules']
             if 'NextToken' in config_rules_resp:
                 next_token = config_rules_resp['NextToken']
             else:
                 break 
-        aggregator_name_rule['AggregatorRules'] = config_rule_names
-        aggregator_rule_info.append(aggregator_name_rule)
-    return aggregator_rule_info
+        aggregator_rule_info['AggregatorRules'] = config_rules
+        aggregator_rule_list.append(aggregator_rule_info)
+    return aggregator_rule_list
 
-'''
-def get_aggregator_names():
-    aggregator_names = []
-    next_token = ''
-
-    while True:
-        response = config.describe_configuration_aggregators(
-            NextToken = next_token
-        )
-        aggregator_names += [aggregator['ConfigurationAggregatorName'] for aggregator in response['ConfigurationAggregators']]
-        if 'NextToken' in response:
-            next_token = response['NextToken']
-        else:
-            break
-    return aggregator_names
-
-'''
-# The above code which is comented is replaced with code below 
+# Function to get aggregator names page by page. 
+# The describe_configuration_aggregator returns details of one or more configuration aggregators associated with the account
 
 def get_aggregator_names():
     aggregator_names = []
     for page in config.get_paginator('describe_configuration_aggregators').paginate():
         aggregator_names += [agg['ConfigurationAggregatorName'] for agg in page['ConfigurationAggregators']]
     return aggregator_names
-
-def get_emil_ids():
-    pass
-
-def send_email(body):
-
-    ses_client.send_email(
-     Source='hari.kammana@gmail.com',
-     Destination = {
-         'ToAddresses': [
-            'hari.kammana@gmail.com',
-        ]
-    },
-    Message = {
-        'Subject': {
-            'Data': 'Demo Report',
-            'Charset': 'UTF-8'
-        },
-        'Body': {
-            'Text': {
-                'Data': body,
-                'Charset': 'UTF-8'
-            }
-        }
-    },
-    )
-# lambda_handler(None,None)
