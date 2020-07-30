@@ -1,7 +1,7 @@
 
 import boto3
 import json
-
+import os
 config = boto3.client('config')
 ses_client = boto3.client('ses')
 
@@ -43,7 +43,7 @@ def get_resources():
                 rules.append(result)
             agg_rules_obj['AggregatorRules'] = rules
         final_resp.append(agg_rules_obj)
-#        send_email(str(agg_rules_obj))
+        send_email(str(agg_rules_obj),get_to_email_id(aggregator_name))
     print(json.dumps(final_resp))
 
 # Function gets aggregator data based out of get_aggregator_names function.
@@ -83,3 +83,41 @@ def get_aggregator_names():
     for page in config.get_paginator('describe_configuration_aggregators').paginate():
         aggregator_names += [agg['ConfigurationAggregatorName'] for agg in page['ConfigurationAggregators']]
     return aggregator_names
+
+def get_to_email_id(aggregator_name):
+    resp = config.describe_configuration_aggregators(
+        ConfigurationAggregatorNames = [aggregator_name]
+    )
+    aggregator_arn = resp['ConfigurationAggregators'][0]['ConfigurationAggregatorArn']
+    resp = config.list_tags_for_resource(
+        ResourceArn=aggregator_arn
+    )
+    for tag in resp['Tags']:
+        if tag['Key'] == 'Email':
+            return tag['Value']
+
+# Send Email 
+def send_email(body,to_email):
+    from_email = os.environ['FROM_EMAIL']
+    subject = os.environ['SUBJECT']
+    ses_client.send_email(
+     Source=from_email,
+     Destination = {
+         'ToAddresses': [
+            to_email,
+        ]
+    },
+    Message = {
+        'Subject': {
+            'Data': subject,
+            'Charset': 'UTF-8'
+        },
+        'Body': {
+            'Text': {
+                'Data': body,
+                'Charset': 'UTF-8'
+            }
+        }
+    },
+    )
+# lambda_handler(None,None)
