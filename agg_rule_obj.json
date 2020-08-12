@@ -1,0 +1,2220 @@
+{
+    "AggregatorName": "awstest_aggregator",
+	"BusinessUnit" : ""
+	
+    "AggregatorRules": [
+        {
+            "rule": "bucket",
+			"name":
+			"severity:
+			"description":			
+            "resources": [
+                {
+                    "ConfigRuleName": "s3-bucket-logging-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-491460113178-us-east-2",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-logging-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-cloudtrail-audit-bucket",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-logging-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-flow-logs-audit-bucket-dev",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-default-lock-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-491460113178-us-east-2",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-default-lock-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-cloudtrail-audit-bucket",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-default-lock-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-flow-logs-audit-bucket-dev",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-replication-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-491460113178-us-east-2",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-replication-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-cloudtrail-audit-bucket",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-replication-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-flow-logs-audit-bucket-dev",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-policy-grantee-check",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-cloudtrail-audit-bucket",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-policy-grantee-check",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-flow-logs-audit-bucket-dev",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "encrypted-volumes",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0af38abfb643c5399",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-ssl-requests-only",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-491460113178-us-east-2",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-ssl-requests-only",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-cloudtrail-audit-bucket",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-ssl-requests-only",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-flow-logs-audit-bucket-dev",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-versioning-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-491460113178-us-east-2",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-versioning-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-cloudtrail-audit-bucket",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-versioning-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-flow-logs-audit-bucket-dev",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-bucket-server-side-encryption-enabled",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-491460113178-us-east-2",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "trail",
+            "resources": [
+                {
+                    "ConfigRuleName": "cloud-trail-encryption-enabled",
+                    "ResourceType": "AWS::CloudTrail::Trail",
+                    "ResourceId": "arn:aws:cloudtrail:us-east-2:628607282128:trail/wellsky-org-cloudtrail-test",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "cloud-trail-cloud-watch-logs-enabled",
+                    "ResourceType": "AWS::CloudTrail::Trail",
+                    "ResourceId": "arn:aws:cloudtrail:us-east-2:628607282128:trail/wellsky-org-cloudtrail-test",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "account",
+            "resources": [
+                {
+                    "ConfigRuleName": "root-account-hardware-mfa-enabled",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "491460113178",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "root-account-mfa-enabled",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "491460113178",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "instance",
+            "resources": [
+                {
+                    "ConfigRuleName": "ec2-instance-detailed-monitoring-enabled",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-061b5d770aedbe665",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "ec2-instance-no-public-ip",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-061b5d770aedbe665",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "ec2-instance-managed-by-systems-manager",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-061b5d770aedbe665",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "securityhub-enabled",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "491460113178",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "loggroup",
+            "resources": [
+                {
+                    "ConfigRuleName": "cw-loggroup-retention-period-check",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/LogScheduledEvent",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "cw-loggroup-retention-period-check",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/aws_config_bucket_events",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "cw-loggroup-retention-period-check",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/emailFunction_If_Inst_Stopped",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "cw-loggroup-retention-period-check",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/emaillambda",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "cw-loggroup-retention-period-check",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/lambdaSNSFunct",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "ebs",
+            "resources": [
+                {
+                    "ConfigRuleName": "ec2-ebs-encryption-by-default",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "491460113178",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "dlq",
+            "resources": [
+                {
+                    "ConfigRuleName": "lambda-dlq-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "LogScheduledEvent",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-dlq-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "aws_config_bucket_events",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-dlq-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "cloudwatchfunction",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-dlq-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "emailFunction_If_Inst_Stopped",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-dlq-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "emaillambda",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-dlq-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "lambdaSNSFunct",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-dlq-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "s3bucketfunction",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "sg",
+            "resources": [
+                {
+                    "ConfigRuleName": "vpc-sg-open-only-to-authorized-ports",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0887c8f30304fe074",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "security",
+            "resources": [
+                {
+                    "ConfigRuleName": "cloudtrail-security-trail-enabled",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "491460113178",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "log",
+            "resources": [
+                {
+                    "ConfigRuleName": "cloudwatch-log-group-encrypted",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/LogScheduledEvent",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "cloudwatch-log-group-encrypted",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/aws_config_bucket_events",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "cloudwatch-log-group-encrypted",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/emailFunction_If_Inst_Stopped",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "cloudwatch-log-group-encrypted",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/emaillambda",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "cloudwatch-log-group-encrypted",
+                    "ResourceType": "AWS::Logs::LogGroup",
+                    "ResourceId": "/aws/lambda/lambdaSNSFunct",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "in",
+            "resources": [
+                {
+                    "ConfigRuleName": "ebs-in-backup-plan",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0af38abfb643c5399",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "enabled",
+            "resources": [
+                {
+                    "ConfigRuleName": "guardduty-enabled-centralized",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "491460113178",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "imdsv2",
+            "resources": [
+                {
+                    "ConfigRuleName": "ec2-imdsv2-check",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-061b5d770aedbe665",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "restricted-ssh",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0887c8f30304fe074",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "default",
+            "resources": [
+                {
+                    "ConfigRuleName": "vpc-default-security-group-closed",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-9b2106f9",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-default-encryption-kms",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-491460113178-us-east-2",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "s3-default-encryption-kms",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-test-org-cloudtrail-audit-bucket",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "gateway",
+            "resources": [
+                {
+                    "ConfigRuleName": "internet-gateway-authorized-vpc-only",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-7e25b916",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "password",
+            "resources": [
+                {
+                    "ConfigRuleName": "iam-password-policy",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "491460113178",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "concurrency",
+            "resources": [
+                {
+                    "ConfigRuleName": "lambda-concurrency-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "LogScheduledEvent",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-concurrency-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "aws_config_bucket_events",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-concurrency-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "cloudwatchfunction",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-concurrency-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "emailFunction_If_Inst_Stopped",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-concurrency-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "emaillambda",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-concurrency-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "lambdaSNSFunct",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-concurrency-check",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "s3bucketfunction",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "encrypted",
+            "resources": [
+                {
+                    "ConfigRuleName": "sns-encrypted-kms",
+                    "ResourceType": "AWS::SNS::Topic",
+                    "ResourceId": "arn:aws:sns:us-east-2:491460113178:cloudwatch_snstopic",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "sns-encrypted-kms",
+                    "ResourceType": "AWS::SNS::Topic",
+                    "ResourceId": "arn:aws:sns:us-east-2:491460113178:cloudwatchsnsSuccess",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "inside",
+            "resources": [
+                {
+                    "ConfigRuleName": "lambda-inside-vpc",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "LogScheduledEvent",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-inside-vpc",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "aws_config_bucket_events",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-inside-vpc",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "cloudwatchfunction",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-inside-vpc",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "emailFunction_If_Inst_Stopped",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-inside-vpc",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "emaillambda",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-inside-vpc",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "lambdaSNSFunct",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "lambda-inside-vpc",
+                    "ResourceType": "AWS::Lambda::Function",
+                    "ResourceId": "s3bucketfunction",
+                    "AccountId": "491460113178",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "CheckEncryptedVolumes",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-CheckEncryptedVolumes-7pfhjcdh",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0c04806900108db55",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-CheckEncryptedVolumes-7pfhjcdh",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-04977b7ee39a0ee5e",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-CheckEncryptedVolumes-7pfhjcdh",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0aef44da8f6710e31",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-CheckEncryptedVolumes-7pfhjcdh",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0cfd07f5641e7627f",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-CheckEncryptedVolumes-3uvfw8sb",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0cd4189ce0fa7305c",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "EC2InstanceNoPublicIP",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-EC2InstanceNoPublicIP-gc8mlbgf",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-03d3e83594568766f",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-EC2InstanceNoPublicIP-gc8mlbgf",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-021ed6d34afa67101",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-EC2InstanceNoPublicIP-gc8mlbgf",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-02830be50eaa8fa0f",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-EC2InstanceNoPublicIP-gc8mlbgf",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-0bbd88645701b6d57",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                }
+            ]
+        },
+        {
+            "rule": "MultiRegionCloudTrailEnabled",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-MultiRegionCloudTrailEnabled-uptyzyvo",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "628607282128",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-MultiRegionCloudTrailEnabled-jrmjfrkw",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "628607282128",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-MultiRegionCloudTrailEnabled-8ollury2",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "628607282128",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-MultiRegionCloudTrailEnabled-rfkkb7s0",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "628607282128",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-MultiRegionCloudTrailEnabled-uptyzyvo",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "911426250850",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-MultiRegionCloudTrailEnabled-jrmjfrkw",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "911426250850",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-MultiRegionCloudTrailEnabled-8ollury2",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "911426250850",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-MultiRegionCloudTrailEnabled-rfkkb7s0",
+                    "ResourceType": "AWS::::Account",
+                    "ResourceId": "911426250850",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                }
+            ]
+        },
+        {
+            "rule": "VPCSecurityGroupOpenOnlyToAuthorizedPorts",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-03fff1f5125d846c4",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-017e4a4646afd9ad0",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-01ebf4fc773c8ce94",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-03b4219b0ce329538",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-03c7ade6a38695634",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0493a4d55aa315803",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-057502ee3415ce4d3",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-063ec8851381be653",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-093f8af964fc43df6",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-09a92e8ec431e0ec7",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-09c7abfb372fb3c8a",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0a023559d59ed19b4",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-iyr54tw8",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0b438609df61376a1",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-zxjvii13",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-02edafc65ec9c0c61",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-zxjvii13",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0e424dd07fa864677",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCSecurityGroupOpenOnlyToAuthorizedPorts-6bpayiab",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0ab3ce806de99aa0a",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                }
+            ]
+        },
+        {
+            "rule": "RequiredTags",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-03d3e83594568766f",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-072d907c",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-38ff4f45",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkInterface",
+                    "ResourceId": "eni-0c9e6f617b20ad1d3",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-1d954163",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-03fff1f5125d846c4",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-f8d50fa8",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-01f2ca2f",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-27744940",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-30fdc36c",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-5ed72050",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-df9edfe1",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-e0fb36ad",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-8f0d44f5",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0c04806900108db55",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::RDS::DBSecurityGroup",
+                    "ResourceId": "default",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::DynamoDB::Table",
+                    "ResourceId": "wellsky-terraform-state-lock",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-0e930e66",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-ebcf1180",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-7759e11c",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-aa79e3c8",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-446e3f3e",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-d149f09d",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-f5756e9d",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-7a4fbf11",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::RDS::DBSecurityGroup",
+                    "ResourceId": "default",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-628607282128-us-east-2",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-terraform-state",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-2d8f9949",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-f9d07d9f",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-43d45b25",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-d97057a6",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-a1302ffa",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-d016d5b6",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::RDS::DBSecurityGroup",
+                    "ResourceId": "default",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-e270809b",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-1e05e365",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-e5f0989e",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-10c03452",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-49b9db62",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-4a947e17",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-57879f2e",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-70dbde3b",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-a0fe70d8",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::RDS::DBSecurityGroup",
+                    "ResourceId": "default",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::CloudFormation::Stack",
+                    "ResourceId": "arn:aws:cloudformation:us-east-1:911426250850:stack/aws-sam-cli-managed-default/9316e680-42ca-11ea-b268-0e763951b664",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::CloudFormation::Stack",
+                    "ResourceId": "arn:aws:cloudformation:us-east-1:911426250850:stack/test-sandbox-eks-vpc/0a787800-3ea3-11ea-b2b5-0ac7f938abd6",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::CloudFormation::Stack",
+                    "ResourceId": "arn:aws:cloudformation:us-east-1:911426250850:stack/zd-sandbox-eks-vpc/878b7b30-0bdb-11ea-96b6-0a36a8f29061",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-021ed6d34afa67101",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-02830be50eaa8fa0f",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-0bbd88645701b6d57",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-09a9974fc852a9222",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-fda02486",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-021adf2f932ca3a42",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-0b4299d88ae1af0fa",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-0c0cbec3ad67a02cd",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-0de857e368111d238",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-49f44f34",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkInterface",
+                    "ResourceId": "eni-009a68d47b067f349",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkInterface",
+                    "ResourceId": "eni-020cbaa80f253d789",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkInterface",
+                    "ResourceId": "eni-074e8c7251c4b1272",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkInterface",
+                    "ResourceId": "eni-08271d91dae321c51",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkInterface",
+                    "ResourceId": "eni-08dfa46117d64ade6",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::NetworkInterface",
+                    "ResourceId": "eni-0c42756beebe4f312",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-01997fbb02901bfb2",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-030d7a06048d2661d",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-07b612304ecb8780c",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-0b468400cc9725f9b",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-0db7754b301d6d027",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-a225f9dc",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-017e4a4646afd9ad0",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-01ebf4fc773c8ce94",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-03b4219b0ce329538",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-03c7ade6a38695634",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0493a4d55aa315803",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0495e6f18f0a3cedc",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-051e81179aa652ae3",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-057502ee3415ce4d3",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-063ec8851381be653",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-06c05a32f068bd599",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-093f8af964fc43df6",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-09a92e8ec431e0ec7",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-09c7abfb372fb3c8a",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0a023559d59ed19b4",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0b438609df61376a1",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0e1993543c5953153",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0f6c6d1e88b141f57",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-b64319e4",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-05a08082c4de9b295",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-060943d067b8595f8",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-0b62c51f163f03164",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-0cf9d6c8a52d512d1",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-2117140f",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-23a2ea1d",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-276c6d7b",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-44f9fc23",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-964eb198",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-bcfc28f1",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-06c95cd9faa08cca7",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-0856799ee33bed788",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-0a6bca191883c2815",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-0d1c4a7c2740c97c2",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-9dcd9ce7",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-04977b7ee39a0ee5e",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0abe26f5f560f0a23",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0aef44da8f6710e31",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0cfd07f5641e7627f",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::RDS::DBSecurityGroup",
+                    "ResourceId": "default",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::RDS::DBSnapshot",
+                    "ResourceId": "hackathon-team-tight-deadline-db2-final-snapshot",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::RDS::DBSubnetGroup",
+                    "ResourceId": "default",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::RDS::DBSubnetGroup",
+                    "ResourceId": "default-vpc-0a6bca191883c2815",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::Redshift::ClusterParameterGroup",
+                    "ResourceId": "default.redshift-1.0",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::Redshift::ClusterSubnetGroup",
+                    "ResourceId": "default",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-sam-cli-managed-default-samclisourcebucket-95r0cnr3ad38",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "cf-templates-17n2b48tw6n7e-us-east-1",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-dev-hhh-rcm-00000000-0000-0000-0000-000000000000",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-pdcfuuhp",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-local-hhh-rcm-00000000-0000-0000-0000-000000000000",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::CloudFormation::Stack",
+                    "ResourceId": "arn:aws:cloudformation:us-east-2:911426250850:stack/khead-sandbox-eks-vpc/8b4336e0-42a0-11ea-a558-021e2396e2cc",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::Instance",
+                    "ResourceId": "i-099d7390031312aeb",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-4b3aa623",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-092c60aedf1b217c1",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-4c4a9327",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::NetworkInterface",
+                    "ResourceId": "eni-00272b32cb271cc75",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-0e05b53ee8ebc82bc",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-d4e55fbf",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-01c567b6fb4c89906",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-02edafc65ec9c0c61",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0bdaa5c6caf133b07",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0e424dd07fa864677",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-e24e6a80",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-5ae9b920",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-d6b8039a",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-e89c8680",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-0e13e73ceb300953e",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-c726d4ac",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::EC2::Volume",
+                    "ResourceId": "vol-0cd4189ce0fa7305c",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::RDS::DBSecurityGroup",
+                    "ResourceId": "default",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-lbuksfdj",
+                    "ResourceType": "AWS::RDS::DBSubnetGroup",
+                    "ResourceId": "default-vpc-c726d4ac",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-5e3d233a",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-ae5bf1c8",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-6675e100",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0ab3ce806de99aa0a",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-b98cfac7",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-02925964",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-145db94e",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-57504830",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::RDS::DBSecurityGroup",
+                    "ResourceId": "default",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-2kkfqpjz",
+                    "ResourceType": "AWS::RDS::DBSubnetGroup",
+                    "ResourceId": "default-vpc-57504830",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::InternetGateway",
+                    "ResourceId": "igw-8dbe72f4",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::NetworkAcl",
+                    "ResourceId": "acl-f2a75589",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-805a1efb",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-dc3b3487",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-3d3ff860",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-42524309",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-7a3f4151",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::Subnet",
+                    "ResourceId": "subnet-8ee014f6",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-0a41da72",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RequiredTags-9xskxzgm",
+                    "ResourceType": "AWS::RDS::DBSecurityGroup",
+                    "ResourceId": "default",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                }
+            ]
+        },
+        {
+            "rule": "S3BucketSSLRequestsOnly",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketSSLRequestsOnly-lacibteu",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-628607282128-us-east-2",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketSSLRequestsOnly-lacibteu",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-terraform-state",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketSSLRequestsOnly-0tozpbre",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-sam-cli-managed-default-samclisourcebucket-95r0cnr3ad38",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketSSLRequestsOnly-0tozpbre",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "cf-templates-17n2b48tw6n7e-us-east-1",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketSSLRequestsOnly-0tozpbre",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-dev-hhh-rcm-00000000-0000-0000-0000-000000000000",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketSSLRequestsOnly-0tozpbre",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-local-hhh-rcm-00000000-0000-0000-0000-000000000000",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                }
+            ]
+        },
+        {
+            "rule": "AccessKeysRotated",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-AccessKeysRotated-299klb22",
+                    "ResourceType": "AWS::IAM::User",
+                    "ResourceId": "AIDAZEW7J5PIDCHEJTFBK",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-AccessKeysRotated-299klb22",
+                    "ResourceType": "AWS::IAM::User",
+                    "ResourceId": "AIDAZEW7J5PIH6N23S6PJ",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-AccessKeysRotated-299klb22",
+                    "ResourceType": "AWS::IAM::User",
+                    "ResourceId": "AIDAZEW7J5PILCTANK5QP",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-AccessKeysRotated-299klb22",
+                    "ResourceType": "AWS::IAM::User",
+                    "ResourceId": "AIDA5INJ45BREFOQD7LA7",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-AccessKeysRotated-299klb22",
+                    "ResourceType": "AWS::IAM::User",
+                    "ResourceId": "AIDA5INJ45BREJQSWPXR3",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-AccessKeysRotated-299klb22",
+                    "ResourceType": "AWS::IAM::User",
+                    "ResourceId": "AIDA5INJ45BRHS7RR52UC",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-AccessKeysRotated-299klb22",
+                    "ResourceType": "AWS::IAM::User",
+                    "ResourceId": "AIDA5INJ45BRJYZCJG43C",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-AccessKeysRotated-299klb22",
+                    "ResourceType": "AWS::IAM::User",
+                    "ResourceId": "AIDA5INJ45BRK66VVY6OR",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-AccessKeysRotated-299klb22",
+                    "ResourceType": "AWS::IAM::User",
+                    "ResourceId": "AIDA5INJ45BRKPTWOG3NN",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        },
+        {
+            "rule": "S3BucketServerSideEncryptionEnabled",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketServerSideEncryptionEnabled-cfvnb15x",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-athena-query-results-628607282128-us-east-2",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketServerSideEncryptionEnabled-rnfgc86n",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "aws-sam-cli-managed-default-samclisourcebucket-95r0cnr3ad38",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketServerSideEncryptionEnabled-rnfgc86n",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-dev-hhh-rcm-00000000-0000-0000-0000-000000000000",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-S3BucketServerSideEncryptionEnabled-rnfgc86n",
+                    "ResourceType": "AWS::S3::Bucket",
+                    "ResourceId": "wellsky-local-hhh-rcm-00000000-0000-0000-0000-000000000000",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                }
+            ]
+        },
+        {
+            "rule": "VPCFlowLogsEnabled",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCFlowLogsEnabled-sizl7grk",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-7a4fbf11",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCFlowLogsEnabled-ruamsdis",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-bedbcbd9",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCFlowLogsEnabled-4j8x2iy9",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-a0fe70d8",
+                    "AccountId": "628607282128",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCFlowLogsEnabled-dbjst6dv",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-06c95cd9faa08cca7",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCFlowLogsEnabled-dbjst6dv",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-0856799ee33bed788",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCFlowLogsEnabled-sizl7grk",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-0e13e73ceb300953e",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCFlowLogsEnabled-sizl7grk",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-c726d4ac",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCFlowLogsEnabled-ruamsdis",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-57504830",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-VPCFlowLogsEnabled-4j8x2iy9",
+                    "ResourceType": "AWS::EC2::VPC",
+                    "ResourceId": "vpc-0a41da72",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                },
+                {
+                    "ConfigRuleName": "required-tags",
+                    "ResourceType": "AWS::EC2::RouteTable",
+                    "ResourceId": "rtb-805a1efb",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-west-2"
+                }
+            ]
+        },
+        {
+            "rule": "RestrictedCommonPorts",
+            "resources": [
+                {
+                    "ConfigRuleName": "OrgConfigRule-RestrictedCommonPorts-5cl8feqo",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-0493a4d55aa315803",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RestrictedCommonPorts-5cl8feqo",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-057502ee3415ce4d3",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-1"
+                },
+                {
+                    "ConfigRuleName": "OrgConfigRule-RestrictedCommonPorts-1ui082nb",
+                    "ResourceType": "AWS::EC2::SecurityGroup",
+                    "ResourceId": "sg-02edafc65ec9c0c61",
+                    "AccountId": "911426250850",
+                    "AwsRegion": "us-east-2"
+                }
+            ]
+        }
+    ]
+}
