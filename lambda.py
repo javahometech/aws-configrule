@@ -52,12 +52,23 @@ def generate_reports():
 
         for rule in resources_by_rule_name:
             agg_rules_obj['AggregatorRules'].append({'rule': rule, 'resources': resources_by_rule_name[rule]})
-
+        
+        updated_agg_rules_obj = appending_rule_data(agg_rules_obj)
         print(f"Sending report for {get_aggregator_business_unit(aggregator)}")
 #        send_email(aggregator, json.dumps(agg_rules_obj))
         print(f"Sent report for {get_aggregator_business_unit(aggregator)}")
         break
 
+def appending_rule_data(agg_rules_obj):
+    with open('ruleinfo.json', 'r') as fp:
+        ruleinfo_data = json.load(fp)
+    for agg_rule in agg_rules_obj['AggregatorRules']:
+        for rule_name in ruleinfo_data.values():
+            if agg_rule['rule'] == rule_name['name'] :
+                for key, value in rule_name.items():
+                    agg_rule[key] = value
+    return agg_rules_obj
+    
 def get_aggregator_data(aggregator_level):
     """
     Parameters:
