@@ -19,6 +19,9 @@ def is_prod_environment():
 
 # This is the main function that retrieves the data and emails the reports
 def generate_reports():
+    with open('rule_info.json', 'r') as fp:
+        ruleinfo_data = json.load(fp)
+
     aggregators = get_aggregator_data('BusinessUnit')
     print('Got list of BU aggregators')
     for aggregator in aggregators:
@@ -51,24 +54,38 @@ def generate_reports():
             resources_by_rule_name[base_rule_name] = rule_resources
 
         for rule in resources_by_rule_name:
-            agg_rules_obj['AggregatorRules'].append({'rule': rule, 'resources': resources_by_rule_name[rule]})
-        
-        updated_agg_rules_obj = appending_rule_data(agg_rules_obj)
+            rule_data = {'rule': rule, 'resources': resources_by_rule_name[rule]}
+            if rule in ruleinfo_data:
+                rule_info = ruleinfo_data[rule]
+                rule_data["name"] = rule_info['name']
+                rule_data["description"] = rule_info['description']
+                rule_data["severity"] = rule_info["severity"]
+            agg_rules_obj['AggregatorRules'].append(rule_data)
+            
+        print(json.dumps(agg_rules_obj))
+#        updated_agg_rules_obj = appending_rule_data(agg_rules_obj)
+#        print("Appended output :" + updated_agg_rules_obj)
+#        print("Appended output :" + json.dumps(agg_rules_obj,indent=4))
         print(f"Sending report for {get_aggregator_business_unit(aggregator)}")
 #        send_email(aggregator, json.dumps(agg_rules_obj))
         print(f"Sent report for {get_aggregator_business_unit(aggregator)}")
-        break
+#        json.dump(updated_agg_rules_obj, outfile, indent=4)
 
+#        break
+"""
 def appending_rule_data(agg_rules_obj):
-    with open('ruleinfo.json', 'r') as fp:
+    with open('rule_info.json', 'r') as fp:
         ruleinfo_data = json.load(fp)
+
     for agg_rule in agg_rules_obj['AggregatorRules']:
-        for rule_name in ruleinfo_data.values():
-            if agg_rule['rule'] == rule_name['name'] :
-                for key, value in rule_name.items():
+        for rule_name, value_data in ruleinfo_data.items():
+#            print(value_data)
+            if agg_rule['rule'] == rule_name:
+                for key, value in value_data.items():
+                    print(value)
                     agg_rule[key] = value
-    return agg_rules_obj
-    
+    return json.dumps(agg_rules_obj)
+"""
 def get_aggregator_data(aggregator_level):
     """
     Parameters:
