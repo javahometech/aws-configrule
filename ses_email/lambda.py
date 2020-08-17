@@ -19,6 +19,9 @@ def is_prod_environment():
 
 # This is the main function that retrieves the data and emails the reports
 def generate_reports():
+    """
+    This method is used to generate_reports
+    """
     with open('rule_info.json', 'r') as fp:
         ruleinfo_data = json.load(fp)
 
@@ -26,52 +29,55 @@ def generate_reports():
     print('Got list of BU aggregators')
     for aggregator in aggregators:
         agg_rules_obj = {}
-        agg_rules_obj['BusinessUnit'] = get_aggregator_business_unit(aggregator)
+        agg_rules_obj['BusinessUnit'] = get_aggregator_business_unit(
+            aggregator)
         agg_rules_obj['AggregatorName'] = aggregator['AggregatorName']
         agg_rules_obj['AggregatorRules'] = []
         resources_by_rule_name = {}
 
         for rule in aggregator['AggregatorRules']:
-            rule_name = rule['ConfigRuleName']
-            account_id = rule['AccountId']
-            aws_region = rule['AwsRegion']
             if re.findall(RULE_NAME_REGEX, rule_name) != []:
                 base_rule_name = re.findall(RULE_NAME_REGEX, rule_name)[0]
             rule_resources = resources_by_rule_name.get(base_rule_name, [])
-            paginator = config_client.get_paginator('get_aggregate_compliance_details_by_config_rule')
+            paginator = CONFIG_CLIENT.get_paginator(\
+                'get_aggregate_compliance_details_by_config_rule')
 
-            for page in paginator.paginate(ConfigurationAggregatorName=aggregator['AggregatorName'],
-                                           ConfigRuleName=rule_name,
-                                           ComplianceType='NON_COMPLIANT',
-                                           AccountId=account_id,
-                                           AwsRegion=aws_region):
+            for page in paginator.paginate(
+                    ConfigurationAggregatorName=aggregator['AggregatorName'],
+                    ConfigRuleName=rule['ConfigRuleName'],
+                    ComplianceType='NON_COMPLIANT',
+                    AccountId=rule['AccountId'],
+                    AwsRegion=rule['AwsRegion']):
 
                 for eval_result in page['AggregateEvaluationResults']:
-                    result = eval_result['EvaluationResultIdentifier']['EvaluationResultQualifier']
-                    result['AccountId'] = account_id
-                    result['AwsRegion'] = aws_region
+                    result = eval_result['EvaluationResultIdentifier'][
+                        'EvaluationResultQualifier']
+                    result['AccountId'] = rule['AccountId']
+                    result['AwsRegion'] = rule['AwsRegion']
                     rule_resources.append(result)
             resources_by_rule_name[base_rule_name] = rule_resources
-
+        medium_arr = []
+        low_arr = []
         for rule in resources_by_rule_name:
-            rule_data = {'rule': rule, 'resources': resources_by_rule_name[rule]}
+            rule_data = {
+                'rule': rule,
+                'resources': resources_by_rule_name[rule]
+            }
             if rule in ruleinfo_data:
-                rule_info = ruleinfo_data[rule]
-                rule_data["name"] = rule_info['name']
-                rule_data["description"] = rule_info['description']
-                rule_data["severity"] = rule_info["severity"]
-            agg_rules_obj['AggregatorRules'].append(rule_data)
-            
-        print(json.dumps(agg_rules_obj))
-#        updated_agg_rules_obj = appending_rule_data(agg_rules_obj)
-#        print("Appended output :" + updated_agg_rules_obj)
-#        print("Appended output :" + json.dumps(agg_rules_obj,indent=4))
-        print(f"Sending report for {get_aggregator_business_unit(aggregator)}")
-#        send_email(aggregator, json.dumps(agg_rules_obj))
-        print(f"Sent report for {get_aggregator_business_unit(aggregator)}")
-#        json.dump(updated_agg_rules_obj, outfile, indent=4)
+                rule_data.update(ruleinfo_data[rule])
 
-#        break
+                if numeric_severity(severity) == 1:
+                    medium_arr.append(rule_data)
+                elif numeric_severity(severity) == 0:
+                    low_arr.append(rule_data)
+                elif numeric_severity(severity) == 2:
+                    agg_rules_obj['AggregatorRules'].append(rule_data)
+
+        agg_rules_obj['AggregatorRules'].extend(medium_arr)
+        agg_rules_obj['AggregatorRules'].extend(low_arr)
+        print(json.dumps(agg_rules_obj))
+
+
 """
 def appending_rule_data(agg_rules_obj):
     with open('rule_info.json', 'r') as fp:
@@ -86,6 +92,12 @@ def appending_rule_data(agg_rules_obj):
                     agg_rule[key] = value
     return json.dumps(agg_rules_obj)
 """
+
+
+def numeric_severity(severity):
+    return {"Low": 0, "Medium": 1, "High": 2}[severity]
+
+
 def get_aggregator_data(aggregator_level):
     """
     Parameters:
