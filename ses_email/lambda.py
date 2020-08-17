@@ -60,8 +60,7 @@ def generate_reports():
                     result['AwsRegion'] = rule['AwsRegion']
                     rule_resources.append(result)
             resources_by_rule_name[base_rule_name] = rule_resources
-        medium_arr = []
-        low_arr = []
+
         for rule in resources_by_rule_name:
             rule_data = {
                 'rule': rule,
