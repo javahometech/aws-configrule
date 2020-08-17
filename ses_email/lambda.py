@@ -7,15 +7,18 @@ RULE_NAME_REGEX = '-(.*?)-'
 ses_client = boto3.client('ses', region_name="us-east-1")
 config_client = boto3.client('config')
 
+
 # Lambda handler function
 def lambda_handler(event, context):
     # pylint: disable=unused-argument
     generate_reports()
 
+
 def is_prod_environment():
     """Returns True if running in dev environment otherwise False"""
     return False
     # return 'HOME' in os.environ and os.environ.get('ENVIRONMENT') == 'PROD'
+
 
 # This is the main function that retrieves the data and emails the reports
 def generate_reports():
@@ -36,8 +39,9 @@ def generate_reports():
         resources_by_rule_name = {}
 
         for rule in aggregator['AggregatorRules']:
-            if re.findall(RULE_NAME_REGEX, rule_name) != []:
-                base_rule_name = re.findall(RULE_NAME_REGEX, rule_name)[0]
+            if re.findall(RULE_NAME_REGEX, rule['ConfigRuleName']) != []:
+                base_rule_name = re.findall(RULE_NAME_REGEX,
+                                            rule['ConfigRuleName'])[0]
             rule_resources = resources_by_rule_name.get(base_rule_name, [])
             paginator = CONFIG_CLIENT.get_paginator(\
                 'get_aggregate_compliance_details_by_config_rule')
@@ -65,9 +69,9 @@ def generate_reports():
             }
             if rule in ruleinfo_data:
                 rule_data.update(ruleinfo_data[rule])
-
+                severity = ruleinfo_data[rule]['severity']
                 if numeric_severity(severity) == 1:
-                    medium_arr.append(rule_data)
+                    medium_arr.append('rule_data')
                 elif numeric_severity(severity) == 0:
                     low_arr.append(rule_data)
                 elif numeric_severity(severity) == 2:
@@ -120,25 +124,31 @@ def get_aggregator_data(aggregator_level):
         aggregator_info['AggregatorName'] = aggregator_name
         aggregator_info['Tags'] = tags
 
-        paginator = config_client.get_paginator('describe_aggregate_compliance_by_config_rules')
-        for page in paginator.paginate(ConfigurationAggregatorName=aggregator_name, Filters={'ComplianceType': 'NON_COMPLIANT'}):
+        paginator = config_client.get_paginator(
+            'describe_aggregate_compliance_by_config_rules')
+        for page in paginator.paginate(
+                ConfigurationAggregatorName=aggregator_name,
+                Filters={'ComplianceType': 'NON_COMPLIANT'}):
             config_rules.extend(page['AggregateComplianceByConfigRules'])
 
         aggregator_info['AggregatorRules'] = config_rules
         aggregator_rule_list.append(aggregator_info)
     return aggregator_rule_list
 
+
 # This function returns a list of aggregators and their tags.
 def get_aggregators():
     """Returns a list of AWS Config rule aggregators"""
     aggregators = []
-    for page in config_client.get_paginator('describe_configuration_aggregators').paginate():
+    for page in config_client.get_paginator(
+            'describe_configuration_aggregators').paginate():
         for aggregator in page['ConfigurationAggregators']:
             name = aggregator['ConfigurationAggregatorName']
             aggregator_arn = aggregator['ConfigurationAggregatorArn']
             tags = get_tags_for_resource(aggregator_arn)
             aggregators.append({'AggregatorName': name, 'Tags': tags})
     return aggregators
+
 
 # Returns the tags for a resource
 def get_tags_for_resource(arn):
@@ -149,11 +159,13 @@ def get_tags_for_resource(arn):
     tags = {tags['Key']: tags['Value'] for tags in resp['Tags']}
     return tags
 
+
 # Gets the contact address associated with an aggregator
 def get_aggregator_email_contact(aggregator):
     if is_prod_environment():
         return aggregator['Tags']['DevOpsContact']
     return DEBUG_EMAIL_DESTINATION
+
 
 # Gets aggregator BU
 def get_aggregator_business_unit(aggregator):
