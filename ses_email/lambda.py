@@ -69,12 +69,14 @@ def generate_reports():
             if rule in ruleinfo_data:
                 rule_data.update(ruleinfo_data[rule])
                 agg_rules_obj['AggregatorRules'].append(rule_data)
-            severity = ruleinfo_data[rule]['severity']
-            agg_rules_obj['AggregatorRules'].sort(
-                key=lambda x: numeric_severity(severity))
-        # agg_rules_obj['AggregatorRules'].extend(medium_arr)
-        # agg_rules_obj['AggregatorRules'].extend(low_arr)
-        # print(json.dumps(agg_rules_obj))
+    sort_agg_rules_obj(agg_rules_obj)
+    return agg_rules_obj
+
+
+def sort_agg_rules_obj(agg_rules_obj):
+    sorted_report = agg_rules_obj['AggregatorRules']
+    sorted_report.sort(key=lambda x: numeric_severity([x['severity']]))
+    return sorted_report
 
 
 def numeric_severity(severity):
