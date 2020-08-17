@@ -70,16 +70,16 @@ def generate_reports():
             if rule in ruleinfo_data:
                 rule_data.update(ruleinfo_data[rule])
                 severity = ruleinfo_data[rule]['severity']
-                if numeric_severity(severity) == 1:
-                    medium_arr.append('rule_data')
-                elif numeric_severity(severity) == 0:
-                    low_arr.append(rule_data)
-                elif numeric_severity(severity) == 2:
-                    agg_rules_obj['AggregatorRules'].append(rule_data)
+                agg_rules_obj['AggregatorRules'].append(rule_data)
 
-        agg_rules_obj['AggregatorRules'].extend(medium_arr)
-        agg_rules_obj['AggregatorRules'].extend(low_arr)
-        print(json.dumps(agg_rules_obj))
+        agg_rules_obj['AggregatorRules'].sort(
+            key=lambda x: numeric_severity(severity))
+        # agg_rules_obj['AggregatorRules'].extend(medium_arr)
+        # agg_rules_obj['AggregatorRules'].extend(low_arr)
+        # print(json.dumps(agg_rules_obj))
+
+def numeric_severity(severity):
+    return {"Low": 0, "Medium": 1, "High": 2}[severity]
 
 
 """
@@ -96,10 +96,6 @@ def appending_rule_data(agg_rules_obj):
                     agg_rule[key] = value
     return json.dumps(agg_rules_obj)
 """
-
-
-def numeric_severity(severity):
-    return {"Low": 0, "Medium": 1, "High": 2}[severity]
 
 
 def get_aggregator_data(aggregator_level):
