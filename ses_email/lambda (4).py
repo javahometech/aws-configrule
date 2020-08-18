@@ -73,6 +73,7 @@ def generate_reports():
             agg_rules_obj['AggregatorRules'].append(rule_data)
             sorted(agg_rules_obj['AggregatorRules'], key=lambda i: i['severity'])
         print(json.dumps(agg_rules_obj))
+
 def get_aggregator_data(aggregator_level):
     """
     Parameters:
