@@ -7,8 +7,10 @@ RULE_NAME_REGEX = '-(.*?)-'
 ses_client = boto3.client('ses', region_name="us-east-1")
 config_client = boto3.client('config')
 
-# Lambda handler function
+# Read rule_info.json file
+ruleinfo_data = json.load(open('rule_info.json', 'r'))
 
+# Lambda handler function
 def lambda_handler(event, context):
     # pylint: disable=unused-argument
     generate_reports()
@@ -19,11 +21,7 @@ def is_prod_environment():
     # return 'HOME' in os.environ and os.environ.get('ENVIRONMENT') == 'PROD'
 
 # This is the main function that retrieves the data and emails the reports
-
 def generate_reports():
-    with open('rule_info.json', 'r') as fp:
-        ruleinfo_data = json.load(fp)
-
     aggregators = get_aggregator_data('BusinessUnit')
     print('Got list of BU aggregators')
     for aggregator in aggregators:
@@ -34,68 +32,37 @@ def generate_reports():
         resources_by_rule_name = {}
 
         for rule in aggregator['AggregatorRules']:
-            rule_name = rule['ConfigRuleName']
-            account_id = rule['AccountId']
-            aws_region = rule['AwsRegion']
-            if re.findall(RULE_NAME_REGEX, rule_name) != []:
-                base_rule_name = re.findall(RULE_NAME_REGEX, rule_name)[0]
+            try:
+                base_rule_name = re.findall(RULE_NAME_REGEX, rule['ConfigRuleName'])[0]
+            except IndexError:
+                continue # Name doesn't match regex, skip this iteration of the for loop
             rule_resources = resources_by_rule_name.get(base_rule_name, [])
             paginator = config_client.get_paginator('get_aggregate_compliance_details_by_config_rule')
 
-            for page in paginator.paginate(ConfigurationAggregatorName=aggregator['AggregatorName'],
-                                           ConfigRuleName=rule_name,
-                                           ComplianceType='NON_COMPLIANT',
-                                           AccountId=account_id,
-                                           AwsRegion=aws_region):
+            for page in paginator.paginate(
+                    ConfigurationAggregatorName=aggregator['AggregatorName'],
+                    ConfigRuleName=rule['ConfigRuleName'],
+                    ComplianceType='NON_COMPLIANT',
+                    AccountId=rule['AccountId'],
+                    AwsRegion=rule['AwsRegion']):
 
                 for eval_result in page['AggregateEvaluationResults']:
                     result = eval_result['EvaluationResultIdentifier']['EvaluationResultQualifier']
-                    result['AccountId'] = account_id
-                    result['AwsRegion'] = aws_region
+                    result['AccountId'] = rule['AccountId']
+                    result['AwsRegion'] = rule['AwsRegion']
                     rule_resources.append(result)
             resources_by_rule_name[base_rule_name] = rule_resources
-        medium_arr = []
-        low_arr = []
         for rule in resources_by_rule_name:
             rule_data = {'rule': rule, 'resources': resources_by_rule_name[rule]}
             if rule in ruleinfo_data:
-                rule_info = ruleinfo_data[rule]
-                rule_data["name"] = rule_info['name']
-                rule_data["description"] = rule_info['description']
-                rule_data["severity"] = rule_info["severity"]
-                if rule_info["severity"] == 'Medium':
-                    medium_arr.append(rule_data)
-                elif rule_info["severity"] == 'Low':
-                    low_arr.append(rule_data)
-                elif rule_info["severity"] == 'High':
-                    agg_rules_obj['AggregatorRules'].append(rule_data)
-        agg_rules_obj['AggregatorRules'].extend(medium_arr)
-        agg_rules_obj['AggregatorRules'].extend(low_arr)
+                rule_data.update(ruleinfo_data[rule])
+                agg_rules_obj['AggregatorRules'].append(rule_data)
+        agg_rules_obj['AggregatorRules'].sort(key=lambda r: {'High': 0, 'Medium': 1, 'Low': 2}[r['severity']])
+        print(f"Sending report for {get_aggregator_business_unit(aggregator)}")
+        send_email(aggregator, json.dumps(agg_rules_obj))
+        print(f"Sent report for {get_aggregator_business_unit(aggregator)}")
+        break
 
-        print(json.dumps(agg_rules_obj))
-#        updated_agg_rules_obj = appending_rule_data(agg_rules_obj)
-#        print("Appended output :" + updated_agg_rules_obj)
-#        print("Appended output :" + json.dumps(agg_rules_obj,indent=4))
-        print("Sending report for {get_aggregator_business_unit(aggregator)}")
-#        send_email(aggregator, json.dumps(agg_rules_obj))
-        print("Sent report for {get_aggregator_business_unit(aggregator)}")
-#        json.dump(updated_agg_rules_obj, outfile, indent=4)
-
-#        break
-"""
-def appending_rule_data(agg_rules_obj):
-    with open('rule_info.json', 'r') as fp:
-        ruleinfo_data = json.load(fp)
-
-    for agg_rule in agg_rules_obj['AggregatorRules']:
-        for rule_name, value_data in ruleinfo_data.items():
-#            print(value_data)
-            if agg_rule['rule'] == rule_name:
-                for key, value in value_data.items():
-                    print(value)
-                    agg_rule[key] = value
-    return json.dumps(agg_rules_obj)
-"""
 def get_aggregator_data(aggregator_level):
     """
     Parameters:
@@ -156,3 +123,31 @@ def get_aggregator_email_contact(aggregator):
 # Gets aggregator BU
 def get_aggregator_business_unit(aggregator):
     return aggregator['Tags']['BusinessUnit']
+
+# This functions sends an email using SES templates
+def send_email(aggregator, json_data):
+    # Try to send the email to test.
+    try:
+        # Provide the contents of the email.
+        to_email = get_aggregator_email_contact(aggregator)
+        response = ses_client.send_templated_email(
+            Source=AUDIT_EMAIL_ADDRESS,
+            SourceArn=SES_SOURCE_ARN,
+            ReturnPathArn=SES_RETURNPATH_ARN,
+            ReplyToAddresses=[DEV_OPS_DL],
+            Destination={
+                'ToAddresses': [
+                    to_email,
+                ],
+            },
+            Template='AWSConfigComplianceReport',
+            TemplateData=json_data
+        )
+        print(response)
+    # Display an error if something goes wrong
+    except ClientError as client_error:
+        # TODO: Need to report this to the team so they are aware
+        print(client_error.response['Error']['Message'])
+    else:
+        print("Email sent!")
+        print("Message ID:" + response['ResponseMetadata']['RequestId'])

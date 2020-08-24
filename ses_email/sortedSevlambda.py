@@ -20,12 +20,6 @@ def is_prod_environment():
 
 # This is the main function that retrieves the data and emails the reports
 
-def swap(arr, index1, index2):
-  temp = arr[index1]
-  arr[index1] = arr[index2]
-  arr[index2] = temp
-  return arr
-
 def generate_reports():
     with open('rule_info.json', 'r') as fp:
         ruleinfo_data = json.load(fp)
@@ -60,7 +54,8 @@ def generate_reports():
                     result['AwsRegion'] = aws_region
                     rule_resources.append(result)
             resources_by_rule_name[base_rule_name] = rule_resources
-
+        medium_arr = []
+        low_arr = []
         for rule in resources_by_rule_name:
             rule_data = {'rule': rule, 'resources': resources_by_rule_name[rule]}
             if rule in ruleinfo_data:
@@ -68,33 +63,22 @@ def generate_reports():
                 rule_data["name"] = rule_info['name']
                 rule_data["description"] = rule_info['description']
                 rule_data["severity"] = rule_info["severity"]
-            agg_rules_obj['AggregatorRules'].append(rule_data)
+                if rule_info["severity"] == 'Medium':
+                    medium_arr.append(rule_data)
+                elif rule_info["severity"] == 'Low':
+                    low_arr.append(rule_data)
+                elif rule_info["severity"] == 'High':
+                    agg_rules_obj['AggregatorRules'].append(rule_data)
+        agg_rules_obj['AggregatorRules'].extend(medium_arr)
+        agg_rules_obj['AggregatorRules'].extend(low_arr)
 
-        #u r takign thsi array then gettting lenght of array ,
-        AggregatorRulesArr = agg_rules_obj.get('AggregatorRules')
-        AggregatorRulesArrLength = len(AggregatorRulesArr)
-        l = 0
-        h = AggregatorRulesArrLength - 1
-        m = 0
-        while (m <= h):
-            severity = AggregatorRulesArr[m].get('severity')
-            if severity == 'Medium':
-                m += 1
-            elif severity == 'High':
-                AggregatorRulesArr = swap(AggregatorRulesArr, l, m)
-                l = l + 1
-                m = m + 1
-            elif severity == 'Low':
-                AggregatorRulesArr = swap(AggregatorRulesArr, m, h)
-                h = h - 1
-        agg_rules_obj['AggregatorRules'] = AggregatorRulesArr
         print(json.dumps(agg_rules_obj))
 #        updated_agg_rules_obj = appending_rule_data(agg_rules_obj)
 #        print("Appended output :" + updated_agg_rules_obj)
 #        print("Appended output :" + json.dumps(agg_rules_obj,indent=4))
-        print(f"Sending report for {get_aggregator_business_unit(aggregator)}")
+        print("Sending report for {get_aggregator_business_unit(aggregator)}")
 #        send_email(aggregator, json.dumps(agg_rules_obj))
-        print(f"Sent report for {get_aggregator_business_unit(aggregator)}")
+        print("Sent report for {get_aggregator_business_unit(aggregator)}")
 #        json.dump(updated_agg_rules_obj, outfile, indent=4)
 
 #        break
