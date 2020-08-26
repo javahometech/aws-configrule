@@ -1,0 +1,96 @@
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border: 1px solid #1C6EA4;
+            background-color: #EFEFEF;
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+            font-family: Tahoma, Geneva, sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #000000;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+        }
+        
+        table td,
+        table th {
+            border: 1px solid #AAAAAA;
+            padding: 3px 2px;
+        }
+        
+        table tbody td {
+            font-size: 14px;
+        }
+        
+        table tr:nth-child(even) {
+            background: #D0E4F5;
+        }
+        
+        table thead {
+            background: #2591D8;
+            background: -moz-linear-gradient(top, #5bace2 0%, #3a9cdc 66%, #2591D8 100%);
+            background: -webkit-linear-gradient(top, #5bace2 0%, #3a9cdc 66%, #2591D8 100%);
+            background: linear-gradient(to bottom, #5bace2 0%, #3a9cdc 66%, #2591D8 100%);
+            border-bottom: 2px solid #444444;
+        }
+        
+        table thead th {
+            font-size: 14px;
+            font-weight: bold;
+            color: #FFFFFF;
+            border-left: 2px solid #D0E4F5;
+        }
+        
+        table thead th:first-child {
+            border-left: none;
+        }
+        
+        .High {
+            color: crimson
+        }
+    </style>
+</head>
+<p>Please review the following compliance report for your AWS accounts and take action as necessary.
+</p>
+<p>You can also log into the AWS Auditing account through the AWS Console via Okta to review the up-to-date compliance status of your AWS accounts.
+</p>
+<p>If you have any questions please contact Team Igneous on MS Team or by replying to this email.
+</p>
+<p>Thank you.</p>
+
+{% for rule in aggregatorRules %}
+<h2>Rule: {{rule['name']}}</h2>
+<p>Severity: <span class="{{rule.severity}}">{{rule.severity}}</span></p>
+<p>Description: {{rule.description}}</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for resource in rule.resources %}
+        <tr>
+            <td>{{resource.ResourceId}}</td>
+            <td>{{resource.ResourceType}}</td>
+            <td>{{resource.AccountId}}</td>
+            <td>{{resource.AwsRegion}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+
+</html>
